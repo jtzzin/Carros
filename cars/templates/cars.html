@@ -1,0 +1,15 @@
+    <html>
+        <head>
+            <title>Meus carros</title>
+        <head>
+            <!-- bloco de contexto (linguagem de templates do django) dos carros-->
+        {% block content %}
+            <body>
+                <!-- chamando a variavel cars no contexto-->
+                <h3>Carro 1: {{ cars.model }}</h3>
+               
+            </body>
+        {% endblock %}
+        
+
+    </html>

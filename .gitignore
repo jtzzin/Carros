@@ -1,0 +1,28 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+
+# --- Django ---
+db.sqlite3
+*.log
+
+# Arquivos de mídia (uploads)
+media/
+
+# Arquivos estáticos gerados (caso use collectstatic)
+staticfiles/
+
+# --- Virtual env ---
+venv/
+env/
+
+# --- Config local ---
+.env
+
+# --- VSCode ---
+.vscode/
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
