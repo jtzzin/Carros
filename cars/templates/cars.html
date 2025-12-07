@@ -6,7 +6,10 @@
         {% block content %}
             <body>
                 <!-- chamando a variavel cars no contexto-->
-                <h3>Carro 1: {{ cars.model }}</h3>
+                 <!-- loop for do django -->
+                  {% for car in cars %}
+                        <h3> {{car.brand }} - {{ car.model }} - {{car.factory_year}}</h3>
+                  {% endfor %} <!--fim do loop fort-->
                
             </body>
         {% endblock %}
