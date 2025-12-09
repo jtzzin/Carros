@@ -5,10 +5,15 @@ from cars.models import Car
 # respota do get na url
 # busca o html de render
 def cars_view(request):
-     print(request.GET.get('search')) # pega a requisicao get do usuario n0 valor -- /search
+     #capturando a requisicao via url /search=
+     search = request.GET.get("search")
+     if search:
+          #aqui, o "ID" representa o id da marca, se quiser buscar por nome, deve usar -> brand__name <- # busca todos os modelos de carros - querySet
+          cars = Car.objects.filter(model__contains=search) #retornando o model do carro
 
-     #aqui, o "ID" representa o id da marca, se quiser buscar por nome, deve usar -> brand__name <- # busca todos os modelos de carros - querySet
-     cars = Car.objects.all() #ID por ordem de criaçao (id=1) ou name 
-    
      # request da url, e o caminho do nosso html
-     return render(request, 'cars.html', {'cars': cars } ) # passando os modelos de carros na pagina web
+     return render(
+          request,
+          'cars.html',
+          {'cars': cars } 
+     ) # passando os modelos de carros na pagina web
